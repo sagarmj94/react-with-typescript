@@ -5,7 +5,7 @@ type HeadingProps = {
 const Heading = (props: HeadingProps) => {
   return (
     <div>
-      <h2>{props.children}</h2>
+      <h4>{props.children}</h4>
     </div>
   );
 };

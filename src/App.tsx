@@ -1,9 +1,14 @@
 import "./App.css";
+import Button from "./components/Button";
+import Container from "./components/Container";
 import { Greet } from "./components/Greet";
 import Heading from "./components/Heading";
+import Input from "./components/Input";
 import Oscar from "./components/Oscar";
 import Person from "./components/Person";
 import PersonList from "./components/PersonList";
+import LogedIn from "./components/state/LogedIn";
+import User from "./components/state/User";
 import Status from "./components/Status";
 
 function App() {
@@ -42,6 +47,21 @@ function App() {
         <Heading>Oscar goes to Umesh Yadav</Heading>
       </Oscar>
       <Greet name="shubhamroy" isLoggedIn={true} />
+      {/* event as shared props */}
+      <Button
+        handleClick={(event, id) => {
+          console.log("button clicked", event, id);
+        }}
+      />
+
+      <Input value="input props" handleChange={(event) => console.log(event)} />
+      <Input />
+
+      <Container style={{ border: "1px solid red", padding: "1rem" }} />
+
+      <LogedIn />
+
+      <User />
     </div>
   );
 }

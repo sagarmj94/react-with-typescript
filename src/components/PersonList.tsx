@@ -1,19 +1,25 @@
 // how to receiv an array as a props
+import { Name } from "./Person.type";
 
 type PersonListProps = {
-  names: {
-    first: string;
-    last: string;
-  }[];
+  names: Name[];
 };
+
+// type PersonListProps = {
+//   names: {
+//     first: string;
+//     last: string;
+//   }[];
+// };
+
 const PersonList = (props: PersonListProps) => {
   return (
     <div>
-      <h2>
+      <h4>
         {props.names.map((name) => {
-          return <h2 key={name.first}>{`${name.first} ${name.last}`}</h2>;
+          return <h5 key={name.first}>{`${name.first} ${name.last}`}</h5>;
         })}
-      </h2>
+      </h4>
     </div>
   );
 };
